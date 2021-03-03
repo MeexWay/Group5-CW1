@@ -39,3 +39,25 @@
                     cart:[],
                     showProduct: true
             },
+            methods: {
+                addToCart() {
+                    this.cart.push(this.product.id);
+                },
+                showCheckout() {
+                    this.showProduct = this.showProduct ? false : true;
+                },
+            },
+            computed: {
+                cartItemCount() {
+                    return this.cart.length || '';
+                },
+                canAddToCart: function() {
+                    return this.product.availableInventory > this.cartItemCount;
+                }
+            },
+           
+        })
+    </script>
+
+    </body>
+</html>
