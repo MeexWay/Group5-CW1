@@ -6,7 +6,7 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
 
     </head>
-    <body>
+   <body>
     <div id="app">
         <header>
             <h1 v-text="sitename"></h1>
@@ -23,41 +23,5 @@
             <button disabled="disabled" v-else>Add to cart</button>
         </main>
     </div>
-    <script type="text/javascript">
-        var webstore = new Vue({
-            el: '#app',
-            data: {
-                sitename:'AFTER SCHOOL CLUB',
-                product: {
-                    id: 0001,
-                    title: "CHEMISTRY",
-                    location: "ABUJA",
-                    price: 5000,
-                    availableInventory: 5,
-                    image:"images/chemistry.jfif"
-                    },
-                    cart:[],
-                    showProduct: true
-            },
-            methods: {
-                addToCart() {
-                    this.cart.push(this.product.id);
-                },
-                showCheckout() {
-                    this.showProduct = this.showProduct ? false : true;
-                },
-            },
-            computed: {
-                cartItemCount() {
-                    return this.cart.length || '';
-                },
-                canAddToCart: function() {
-                    return this.product.availableInventory > this.cartItemCount;
-                }
-            },
-           
-        })
-    </script>
-
-    </body>
+   </body>
 </html>
